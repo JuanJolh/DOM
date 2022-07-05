@@ -51,7 +51,10 @@ function Bienvenida(){
 
 function comprar(){
     for (let consola of consolas){
-        let respuesta = prompt("Desea comprar la Consola:" + "\nNombre: " + consola.nombre + "\nPrecio: " + consola.precio + " USD" + "\nCapacidad: " + consola.capacidad + " GB" + "\nMarca: " + consola.marca + "\nIngrese: Si o NO ").toUpperCase();
+        respuesta = prompt("Desea comprar la Consola:" + "\nNombre: " + consola.nombre + "\nPrecio: " + consola.precio + " USD" + "\nCapacidad: " + consola.capacidad + " GB" + "\nMarca: " + consola.marca + "\nIngrese: Si o NO ").toUpperCase();
+        while (respuesta == ""){
+            respuesta = prompt("Desea comprar la Consola:" + "\nNombre: " + consola.nombre + "\nPrecio: " + consola.precio + " USD" + "\nCapacidad: " + consola.capacidad + " GB" + "\nMarca: " + consola.marca + "\nIngrese: Si o NO ").toUpperCase();
+        }
         switch(respuesta) {
             case "SI":
                 consolas_seleccionadas.push(consola);
@@ -69,6 +72,7 @@ function total(){
 }
 
 let nombre = "";
+let respuesta = "";
 let total_precio = 0;
 
 Bienvenida();
